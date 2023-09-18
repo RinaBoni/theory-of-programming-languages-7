@@ -1,0 +1,8 @@
+C:\study\theory-of-programming-languages-7\lab1C++\lab1\lab1\bin\Debug\lab1.exe.config
+C:\study\theory-of-programming-languages-7\lab1C++\lab1\lab1\bin\Debug\lab1.exe
+C:\study\theory-of-programming-languages-7\lab1C++\lab1\lab1\bin\Debug\lab1.pdb
+C:\study\theory-of-programming-languages-7\lab1C++\lab1\lab1\obj\Debug\lab1.csproj.AssemblyReference.cache
+C:\study\theory-of-programming-languages-7\lab1C++\lab1\lab1\obj\Debug\lab1.csproj.SuggestedBindingRedirects.cache
+C:\study\theory-of-programming-languages-7\lab1C++\lab1\lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache
+C:\study\theory-of-programming-languages-7\lab1C++\lab1\lab1\obj\Debug\lab1.exe
+C:\study\theory-of-programming-languages-7\lab1C++\lab1\lab1\obj\Debug\lab1.pdb
