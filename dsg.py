@@ -1,15 +1,20 @@
 import random
 
+class Pair:
+    def __init__(self, first, second):
+        self.first = first
+        self.second = second
+
 class Rule:
     def __init__(self, key, value, isCycled):
         self.key = key
         self.value = value
         self.isCycled = isCycled
 
-    def __init__(self, key, value):
-        self.key = key
-        self.value = value
-        self.isCycled = False
+    # def __init__(self, key, value):
+    #     self.key = key
+    #     self.value = value
+    #     self.isCycled = False
         
 class Language:
     def __init__(self, rules):
@@ -17,6 +22,12 @@ class Language:
 
     def setRules(self, rules):
         self.rules = rules
+
+    def getRules(self):
+        str = ""
+        for rule in self.rules:
+            str += rule.key + "-->" + rule.value + "\n"
+        return str
 
     def findChain(self, word):
         newWord = word
@@ -34,152 +45,169 @@ class Language:
                             return newWord
         return newWord
 
+    def findGrammar(self, max=30, word="S", n=0):  # Добавляем self как параметр
+        new_word = word
+        for i in range(len(word)):
+            term_character = ""
+            for j in range(i, len(word)):
+                term_character += word[j]
+                for rule in self.rules:  # Используем self.rules
+                    if rule.key == term_character and n < max:
+                        new_word = word[:i] + rule.value + word[i + len(term_character):]
+                        n += 1
+                        new_word = self.findGrammar(max, new_word, n)  # Используем self.findGrammar
+                        c = 0
+                        if n == max - 1:
+                            for rule2 in self.rules:  # Используем self.rules
+                                if rule2.key in new_word:
+                                    c += 1
+                            if c == 0:
+                                return new_word
+        return new_word
 
+    
+    def findLanguage(self):  # Добавляем self
+        str1 = self.findGrammar(10)  # Не передаем rules явно, используем self.rules
+        str2 = self.findGrammar(20)  # Не передаем rules явно, используем self.rules
+        # print(str1)
+        # print(str2)
+        output = "L = { "
+        count = 0
+        list = []
+        for i in range(len(str1)):
+            for pair in list:
+                if pair[0] == str1[i]:
+                    pair[1] += 1
+                    count += 1
+            if count == 0:
+                list.append([str1[i], 0])
+            count = 0
+        count = 0
+        count2 = 0
+        count3 = 0
+        for pair1 in list:
+            for pair2 in list:
+                if pair1[1] == pair2[1]:
+                    count += 1
+            # print(count)
+            if count == 1:
+                output += "'" + pair1[0] + "'" + "^n" + str(count3) + ", "
+                count = 0
+                count3 += 1
+            else:
+                output += "'" + pair1[0] + "'" + "^m" + str(count2) + ", "
+                count2 += 1
+            count = 0
+        output += "|"
+        if count3 != 0:
+            output += " ni > 0"
+        if count2 != 0:
+            output += ", mi > 0"
+        output += "}"
+        print(output)
+
+
+    def check_loop(input, rule, count=5):
+        for i in range(count):
+            key = rule.key
+            value = rule.value
+
+            pos = input.find(key)
+
+            if pos != -1:
+                input = input[:pos] + value + input[pos+len(key):]
+            else:
+                return False
+
+        return True
+
+
+    def generate_grammar2(self):
+        str = self.findGrammar()
+        output = "Грамматика ( "
+        characters = []
+        for i in range(len(str)):
+            ch = str[i]
+            if ch not in characters:
+                characters.append(ch)
+        output += "{"
+        while len(characters) > 1:
+            output += " " + characters.pop() + ","
+        output += characters.pop() + "} | "
 
 def task_one():
     rules = [
-        Rule("S", "T"),
-        Rule("S", "T+S"),
-        Rule("S", "T-S"),
-        Rule("T", "F*T"),
-        Rule("T", "F"),
-        Rule("F", "a"),
-        Rule("F", "b")
+        Rule("S", "T", False),
+        Rule("S", "T+S", False),
+        Rule("S", "T-S", False),
+        Rule("T", "F*T", False),
+        Rule("T", "F", False),
+        Rule("F", "a", False),
+        Rule("F", "b", False)
     ]
     language = Language(rules)
 
     rules1 = [
-        Rule("S", "aSBC"),
-        Rule("S", "abC"),
-        Rule("bB", "bb"),
-        Rule("CB", "BC"),
-        Rule("bC", "bc"),
-        Rule("cC", "cc")
+        Rule("S", "aSBC", False),
+        Rule("S", "abC", False),
+        Rule("bB", "bb", False),
+        Rule("CB", "BC", False),
+        Rule("bC", "bc", False),
+        Rule("cC", "cc", False)
     ]
     language1 = Language(rules1)
 
     word = "a-b*a+b"
     word2 = "aaabbbccc"
 
-    print("Цепочка создания слова: " + word)
+    print("а) Цепочка создания слова: " + word)
     language.findChain(word)
     print(word)
 
-    print("Цепочка создания слова: " + word2)
+    print("b) Цепочка создания слова: " + word2)
     language1.findChain(word2)
     print(word2)
     
 def task_two():
     rules = [
-    Rule("S", "aaCFD"),
-    Rule("AD", "D"),
-    Rule("F", "AFB"),
-    Rule("F", "AB"),
-    Rule("Cb", "bC"),
-    Rule("AB", "bBA"),
-    Rule("CB", "C"),
-    Rule("Ab", "bA"),
-    Rule("bCD", "")
+        Rule("S", "aaCFD", False),
+        Rule("AD", "D", False),
+        Rule("F", "AFB", True),
+        Rule("F", "AB", False),
+        Rule("Cb", "bC", False),
+        Rule("AB", "bBA", False),
+        Rule("CB", "C", False),
+        Rule("Ab", "bA", False),
+        Rule("bCD","e", False),
     ]
-
-    # Создаем объект класса Language с заданными правилами
     language = Language(rules)
 
-    # Попробуем различные входные слова
-    word1 = "aaCFD"
-    word2 = "bCAb"
-    word3 = "bCDD"
+    rules1 = [
+        Rule("S","A/", False),
+        Rule("S","B/", False),
+        Rule("A","a", False),
+        Rule("A","Ba", False),
+        Rule("B","b", False),
+        Rule("B","Bb", False),
+        Rule("B","Ab", False),
+    ]
+    language1 = Language(rules1)
 
-    # Вызываем метод findChain для каждого слова
-    result1 = language.findChain(word1)
-    result2 = language.findChain(word2)
-    result3 = language.findChain(word3)
+    print('a) ', language.getRules())
+    language.findLanguage()
+    print()
 
-    # Проверяем результаты
-    if result1 == "S":
-        print("Язык порождается грамматикой.")
-    else:
-        print("Язык не порождается грамматикой.")
-
-    if result2 == "S":
-        print("Язык порождается грамматикой.")
-    else:
-        print("Язык не порождается грамматикой.")
-
-    if result3 == "S":
-        print("Язык порождается грамматикой.")
-    else:
-        print("Язык не порождается грамматикой.")
+    print('b) ', language1.getRules())
+    language1.findLanguage()
+    print('\n\n')
         
         
-def t_t():
-    def generate_string():
-        # Начинаем с символа S
-        string = "S"
-
-        while True:
-            new_string = ""
-            i = 0
-            while i < len(string):
-                char = string[i]
-                print(char)
-
-                if char == "S":
-                    new_string += "aaCFD"
-                elif char == "A":
-                    # Добавляем символ D с вероятностью 1/3
-                    if random.random() < 1/3:
-                        new_string += "D"
-                    i += 1
-                elif char == "D":
-                    pass
-                elif char == "F":
-                    # Выбираем случайное правило AFB или AB с равной вероятностью
-                    if random.random() < 0.5:
-                        new_string += "AFB"
-                    else:
-                        new_string += "AB"
-                    i += 1
-                elif char == "C":
-                    # Пропускаем символ Cb
-                    i += 1
-                elif char == "b":
-                    # Добавляем символ Cb с вероятностью 1/2
-                    if random.random() < 0.5:
-                        new_string += "Cb"
-                    i += 1
-                elif char == "A":
-                    # Добавляем символ bBA
-                    new_string += "bBA"
-                    i += 1
-                elif char == "B":
-                    # Пропускаем символ bBA
-                    i += 1
-                elif char == "C":
-                    # Пропускаем символ CB
-                    i += 1
-                elif char == "b":
-                    # Пропускаем символ bCD
-                    i += 1
-                elif char == "D":
-                    # Пропускаем символ bCD
-                    i += 1
-                else:
-                    # Достигли конца строки, завершаем генерацию
-                    return new_string
-
-            string = new_string
-
-    # Генерируем и выводим строку
-    generated_string = generate_string()
-    print(generated_string)
-        
+    
 def main():
-    print('\nTASK ONE')
+    print('\nЗадание один:')
     task_one()
-    print('\n\nTASK TWO')
-    # task_two()
-    t_t()
+    print('\nЗадание два:')
+    task_two()
 
     
 

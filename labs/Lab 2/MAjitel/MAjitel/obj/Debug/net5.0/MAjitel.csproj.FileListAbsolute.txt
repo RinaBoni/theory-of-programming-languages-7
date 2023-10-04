@@ -1,0 +1,16 @@
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\bin\Debug\net5.0\MAjitel.exe
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\bin\Debug\net5.0\MAjitel.deps.json
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\bin\Debug\net5.0\MAjitel.runtimeconfig.json
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\bin\Debug\net5.0\MAjitel.runtimeconfig.dev.json
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\bin\Debug\net5.0\MAjitel.dll
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\bin\Debug\net5.0\ref\MAjitel.dll
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\bin\Debug\net5.0\MAjitel.pdb
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\obj\Debug\net5.0\MAjitel.csproj.AssemblyReference.cache
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\obj\Debug\net5.0\MAjitel.GeneratedMSBuildEditorConfig.editorconfig
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\obj\Debug\net5.0\MAjitel.AssemblyInfoInputs.cache
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\obj\Debug\net5.0\MAjitel.AssemblyInfo.cs
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\obj\Debug\net5.0\MAjitel.csproj.CoreCompileInputs.cache
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\obj\Debug\net5.0\MAjitel.dll
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\obj\Debug\net5.0\ref\MAjitel.dll
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\obj\Debug\net5.0\MAjitel.pdb
+D:\GIT\4-course\ТЯП\labs\Lab 2\MAjitel\MAjitel\obj\Debug\net5.0\MAjitel.genruntimeconfig.cache

@@ -1,0 +1,96 @@
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\Lab 1.exe
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\Lab 1.deps.json
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\Lab 1.runtimeconfig.json
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\Lab 1.runtimeconfig.dev.json
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\Lab 1.dll
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\ref\Lab 1.dll
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\Lab 1.pdb
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.csproj.AssemblyReference.cache
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.AssemblyInfoInputs.cache
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.AssemblyInfo.cs
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.csproj.CoreCompileInputs.cache
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.dll
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\ref\Lab 1.dll
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.pdb
+C:\Users\crash\OneDrive\Рабочий стол\Домашка\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.genruntimeconfig.cache
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\Lab 1.exe
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\Lab 1.deps.json
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\Lab 1.runtimeconfig.json
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\Lab 1.runtimeconfig.dev.json
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\Lab 1.dll
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\ref\Lab 1.dll
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\bin\Debug\net5.0\Lab 1.pdb
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.csprojAssemblyReference.cache
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.AssemblyInfo.cs
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.dll
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\ref\Lab 1.dll
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.pdb
+C:\Users\User\Desktop\7-term\Теория языков программирования и методы трансляции\Lab 1\obj\Debug\net5.0\Lab 1.genruntimeconfig.cache
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\bin\Debug\net5.0\Lab 1.exe
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\bin\Debug\net5.0\Lab 1.deps.json
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\bin\Debug\net5.0\Lab 1.runtimeconfig.json
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\bin\Debug\net5.0\Lab 1.runtimeconfig.dev.json
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\bin\Debug\net5.0\Lab 1.dll
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\bin\Debug\net5.0\ref\Lab 1.dll
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\bin\Debug\net5.0\Lab 1.pdb
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\obj\Debug\net5.0\Lab 1.csprojAssemblyReference.cache
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\obj\Debug\net5.0\Lab 1.GeneratedMSBuildEditorConfig.editorconfig
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\obj\Debug\net5.0\Lab 1.AssemblyInfoInputs.cache
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\obj\Debug\net5.0\Lab 1.AssemblyInfo.cs
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\obj\Debug\net5.0\Lab 1.csproj.CoreCompileInputs.cache
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\obj\Debug\net5.0\Lab 1.dll
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\obj\Debug\net5.0\ref\Lab 1.dll
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\obj\Debug\net5.0\Lab 1.pdb
+D:\7-term\Теория языков программирования и методы трансляции\Lab 1 — копия (3)\obj\Debug\net5.0\Lab 1.genruntimeconfig.cache
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\bin\Debug\net5.0\Lab 1.exe
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\bin\Debug\net5.0\Lab 1.deps.json
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\bin\Debug\net5.0\Lab 1.runtimeconfig.json
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\bin\Debug\net5.0\Lab 1.runtimeconfig.dev.json
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\bin\Debug\net5.0\Lab 1.dll
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\bin\Debug\net5.0\ref\Lab 1.dll
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\bin\Debug\net5.0\Lab 1.pdb
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\obj\Debug\net5.0\Lab 1.csproj.AssemblyReference.cache
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\obj\Debug\net5.0\Lab 1.GeneratedMSBuildEditorConfig.editorconfig
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\obj\Debug\net5.0\Lab 1.AssemblyInfoInputs.cache
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\obj\Debug\net5.0\Lab 1.AssemblyInfo.cs
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\obj\Debug\net5.0\Lab 1.csproj.CoreCompileInputs.cache
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\obj\Debug\net5.0\Lab 1.dll
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\obj\Debug\net5.0\ref\Lab 1.dll
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\obj\Debug\net5.0\Lab 1.pdb
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы\obj\Debug\net5.0\Lab 1.genruntimeconfig.cache
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\obj\Debug\net5.0\Lab 1.csproj.AssemblyReference.cache
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\obj\Debug\net5.0\Lab 1.GeneratedMSBuildEditorConfig.editorconfig
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\obj\Debug\net5.0\Lab 1.AssemblyInfoInputs.cache
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\obj\Debug\net5.0\Lab 1.AssemblyInfo.cs
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\obj\Debug\net5.0\Lab 1.csproj.CoreCompileInputs.cache
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\obj\Debug\net5.0\Lab 1.dll
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\obj\Debug\net5.0\ref\Lab 1.dll
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\obj\Debug\net5.0\Lab 1.pdb
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\bin\Debug\net5.0\Lab 1.exe
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\bin\Debug\net5.0\Lab 1.deps.json
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\bin\Debug\net5.0\Lab 1.runtimeconfig.json
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\bin\Debug\net5.0\Lab 1.runtimeconfig.dev.json
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\bin\Debug\net5.0\Lab 1.dll
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\bin\Debug\net5.0\ref\Lab 1.dll
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\bin\Debug\net5.0\Lab 1.pdb
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-10\obj\Debug\net5.0\Lab 1.genruntimeconfig.cache
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\bin\Debug\net5.0\Lab 1.exe
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\bin\Debug\net5.0\Lab 1.deps.json
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\bin\Debug\net5.0\Lab 1.runtimeconfig.json
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\bin\Debug\net5.0\Lab 1.runtimeconfig.dev.json
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\bin\Debug\net5.0\Lab 1.dll
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\bin\Debug\net5.0\ref\Lab 1.dll
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\bin\Debug\net5.0\Lab 1.pdb
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\obj\Debug\net5.0\Lab 1.csproj.AssemblyReference.cache
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\obj\Debug\net5.0\Lab 1.GeneratedMSBuildEditorConfig.editorconfig
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\obj\Debug\net5.0\Lab 1.AssemblyInfoInputs.cache
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\obj\Debug\net5.0\Lab 1.AssemblyInfo.cs
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\obj\Debug\net5.0\Lab 1.csproj.CoreCompileInputs.cache
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\obj\Debug\net5.0\Lab 1.dll
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\obj\Debug\net5.0\ref\Lab 1.dll
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\obj\Debug\net5.0\Lab 1.pdb
+D:\GIT\4-course\ТЯП\labs\Lab 1 — 2-5 задания сданы, 6-12\obj\Debug\net5.0\Lab 1.genruntimeconfig.cache

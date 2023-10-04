@@ -1,0 +1,13 @@
+D:\4curse\ТЯП\Lab 2\MAjitel\MAjitel\bin\Debug\netcoreapp3.1\MAjitel.exe
+D:\4curse\ТЯП\Lab 2\MAjitel\MAjitel\bin\Debug\netcoreapp3.1\MAjitel.deps.json
+D:\4curse\ТЯП\Lab 2\MAjitel\MAjitel\bin\Debug\netcoreapp3.1\MAjitel.runtimeconfig.json
+D:\4curse\ТЯП\Lab 2\MAjitel\MAjitel\bin\Debug\netcoreapp3.1\MAjitel.runtimeconfig.dev.json
+D:\4curse\ТЯП\Lab 2\MAjitel\MAjitel\bin\Debug\netcoreapp3.1\MAjitel.dll
+D:\4curse\ТЯП\Lab 2\MAjitel\MAjitel\bin\Debug\netcoreapp3.1\MAjitel.pdb
+D:\4curse\ТЯП\Lab 2\MAjitel\MAjitel\obj\Debug\netcoreapp3.1\MAjitel.csprojAssemblyReference.cache
+D:\4curse\ТЯП\Lab 2\MAjitel\MAjitel\obj\Debug\netcoreapp3.1\MAjitel.AssemblyInfoInputs.cache
+D:\4curse\ТЯП\Lab 2\MAjitel\MAjitel\obj\Debug\netcoreapp3.1\MAjitel.AssemblyInfo.cs
+D:\4curse\ТЯП\Lab 2\MAjitel\MAjitel\obj\Debug\netcoreapp3.1\MAjitel.csproj.CoreCompileInputs.cache
+D:\4curse\ТЯП\Lab 2\MAjitel\MAjitel\obj\Debug\netcoreapp3.1\MAjitel.dll
+D:\4curse\ТЯП\Lab 2\MAjitel\MAjitel\obj\Debug\netcoreapp3.1\MAjitel.pdb
+D:\4curse\ТЯП\Lab 2\MAjitel\MAjitel\obj\Debug\netcoreapp3.1\MAjitel.genruntimeconfig.cache
