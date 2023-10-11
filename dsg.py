@@ -37,6 +37,8 @@ class Language:
     def set_MaxRepetitionsCount(self, value):
         self._max_repetitions_count = value
 
+    
+
     def output_left(self):
         result = "S"
         count = 0
@@ -365,7 +367,6 @@ def task_two():
     language1.find_language()
     print('\n\n')
         
-
 def task_three():
     dict_rules = [
         Rule("S", "aaB", False),
@@ -414,7 +415,6 @@ def task_three():
     fl = Language(dict_rules)
     print("Цепочка: " + fl.translate("S"))
     print()
-
 
 def task_four():
     print("Подпункт a)")
@@ -538,7 +538,18 @@ def task_seven():
     print("Цепочка: " + fl.translate("S"))
     print()
 
- 
+def task_eleven():
+    dict_rules = [
+        Rule("S", "0S", False),
+        Rule("S", "0B", False),
+        Rule("B", "1B", False),
+        Rule("B", "1C", False),
+        Rule("C", "1C", False),
+        Rule("C", "|", False),
+    ]
+
+
+    
     
     
     
