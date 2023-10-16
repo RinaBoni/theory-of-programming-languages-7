@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\gamet\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\gamet\\.nuget\\packages"
-    ]
-  }
-}
