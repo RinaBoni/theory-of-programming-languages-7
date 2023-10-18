@@ -9,6 +9,7 @@ G.add_node("S", shape="circle", color="blue")
 G.add_node("P", shape="circle", color="blue")
 G.add_node("N", shape="circle", color="blue")
 
+
 # Добавляем переходы
 G.add_edge('H', 'N', label="0, 1")
 G.add_edge('N', 'N', label="0, 1")
