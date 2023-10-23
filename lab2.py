@@ -2,6 +2,8 @@ import random
 from enum import Enum
 import gram
 import machine 
+import networkx as nx
+import matplotlib.pyplot as plt
 
 m1 = machine.Machine()
 m1.addRule((m1.startState, m1.startState + '0'))
@@ -14,7 +16,102 @@ m1.addRule(('N', 'N0'))
 m1.addRule(('N', '1'))
 m1.addRule(('N', '0'))
 m1.autoSetRulesAndStatesByTransitions()
-m1.showStatesDiagram()
+# m1.showStatesDiagram()
+
+
+m2 = machine.Machine()
+m2.addRule((m2.startState, m2.startState + '0'))
+m2.addRule((m2.startState, '0' + m2.startState))
+m2.addRule((m2.startState, 'D'))
+m2.addRule(('D', 'DD'))
+m2.addRule(('D', '1A'))
+m2.addRule(('D', 'e'))
+m2.addRule(('A', '0B'))
+m2.addRule(('A', 'e'))
+m2.addRule(('B', '0A'))
+m2.addRule(('B', '0A'))
+m2.autoSetRulesAndStatesByTransitions()
+# m2.showStatesDiagram()
+
+
+def showStatesDiagram(self):
+    options = {
+        'node_color': 'Blue',
+        'arrowstyle': '-|>',
+        'arrowsize': 18,
+    }
+    g = nx.DiGraph()
+    # Добавляем состояния
+    g.add_node("H", shape="circle", color="blue")
+    g.add_node("S", shape="circle", color="blue")
+    g.add_node("A", shape="circle", color="blue")
+    g.add_node("B", shape="circle", color="blue")
+
+
+    # Добавляем переходы
+    g.add_edge('S', 'S', label="0, 0")
+    g.add_edge('D', 'S', label="")
+    g.add_edge('D', 'D', label="D")
+    g.add_edge('A', 'D', label="1")
+    g.add_edge('H', 'D', label="e")
+    g.add_edge('B', 'A', label="0")
+    g.add_edge('H', 'A', label="e")
+    g.add_edge('A', 'B', label="0")
+    g.add_edge('H', 'B', label="0")
+
+    # edges = []
+    # edgesWithlabels = dict()
+    # ts = self.getStatesTransitions()
+    # rules = ''
+    # lts = len(ts)
+    # for i in range(lts):
+    #     edge = (ts[i][0], ts[i][2])
+    #     if (edge not in edges):
+    #         edges.append(edge)
+    #         rules = ''
+
+    #     rules += ts[i][1] + '; '
+    #     edgesWithlabels.update({edge: rules[0:-2]})
+
+    pos = nx.spiral_layout(g)
+    g.add_edges_from(edges)
+    nx.draw(g, pos, with_labels=True, **options)
+    nx.draw_networkx_edge_labels(g, pos, edgesWithlabels)
+
+    for edge, label in edgesWithlabels.items():
+        if edge[0] == edge[1]:
+            x, y = pos[edge[0]]
+            plt.text(x, y + 0.25, label, ha='center', va='center')
+    plt.show()
+
+G = nx.DiGraph()
+
+# Добавляем состояния
+G.add_node("H", shape="circle", color="blue")
+G.add_node("S", shape="circle", color="blue")
+G.add_node("A", shape="circle", color="blue")
+G.add_node("B", shape="circle", color="blue")
+
+
+# Добавляем переходы
+G.add_edge('S', 'S', label="0, 0")
+G.add_edge('D', 'S', label="")
+G.add_edge('D', 'D', label="D")
+G.add_edge('A', 'D', label="1")
+G.add_edge('H', 'D', label="e")
+G.add_edge('B', 'A', label="0")
+G.add_edge('H', 'A', label="e")
+G.add_edge('A', 'B', label="0")
+G.add_edge('H', 'B', label="0")
+
+# Изменяем масштаб для лучшей видимости
+pos = nx.spring_layout(G, seed=42, scale=2.5)
+
+# Рисуем граф
+nx.draw_networkx(G, pos, with_labels=True, node_size=1500, node_color="skyblue", font_size=10, font_weight="bold")
+edge_labels = nx.get_edge_attributes(G, 'label')
+nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
+# plt.show()
 
 
 
@@ -38,6 +135,8 @@ def print_rules(arr):
 # Множество состояний
 class State:
     H, C, D, S, N, P, B, A, ERROR = range(9)
+
+
 
 # Функция для выбора случайного состояния из двух вариантов
 def random_state(a, b):
@@ -131,36 +230,75 @@ def analizator22(text):
     else:
         return "Цепочка не принадлежит грамматике"
 
-
+# Множество состояний
+class State3:
+    H, D, A, B, S, ERROR = range(6)
 
 # Анализатор для задания по варианту
-def analizator2(text):
-    current_state = State.H
-    count = 0
-    txtsize = len(text)
+def analizator23(text):
+    current_state = State3.H
+    # count = 0
+    # txtsize = len(text)
+    count = len(text)-1
+    txtsize = 0
     res = ""
     
-    while current_state != State.ERROR and current_state != State.S and count < txtsize:
-        if current_state == State.H:
-            current_state = State.S
-        elif current_state == State.S:
-            if text[count] in ('1', '0'):
-                current_state = State.D
-            if text[count] in ('+', '-'):
-                current_state = State.B
-        elif current_state == State.D:
-            if text[count] == '0':
-                current_state = random_state(State.S, State.C)
-        elif current_state == State.C:
-            if text[count] == '1':
-                current_state = random_state(State.S, State.D)
-        else:
-            current_state = State.ERROR
+    while current_state != State3.ERROR and current_state != State3.S and count >= txtsize:
+        if current_state == State3.H:
+            if text[count] in ('e'):
+                current_state = State3.D
+                print('H->D\n')
+            elif text[count] in ('e'):
+                current_state = State3.A
+                print('H->A\n')
+            elif text[count] in ('0'):
+                current_state = State3.B
+                print('H->B\n')
+            else:
+                current_state = State3.ERROR
+        
+        
+        elif current_state == State3.B:
+            if text[count] in ('0'):
+                current_state = State3.A
+                print('B->A\n')
+            else:
+                current_state = State3.ERROR
+        
+        
+        elif current_state == State3.A:
+            if text[count] in ('0'):
+                current_state = State3.B
+                print('A->B\n')
+            elif text[count] in ('1'):
+                current_state = State3.D
+                print('A->D\n')
+            else:
+                current_state = State3.ERROR
+        
+        
+        elif current_state == State3.D:
+            print('D1->S\n')
+            current_state = State3.S
+            print('D->S\n')
+        # elif current_state == State3.D:
+        #     current_state = State3.D
+        #     print('D->D\n')
+        
+        
+        elif current_state == State3.S:
+            if text[count] in ('0'):
+                current_state = State3.S
+                print('S->S\n')
+            # elif text[count] in ('0'):
+            #     current_state = State3.S
+            else:
+                current_state = State3.ERROR
         
         res += state_to_string(current_state) + " "
-        count += 1
-    
-    return res
+        # count += 1
+        count -= 1
+        #видит начало, не видит конца 
 
 # Функция для печати диаграммы состояний на экран
 def print_diagram(a):
@@ -201,7 +339,7 @@ print("100:", analizator21("100"))
 
 print('\n\n\n')
 
-print("Лабораторная работа №2. Общее задание №2.")
+print("Лабораторная работа 2. Задание 2.")
 print("\nГрамматика языка: G = ({0, 1, |, +, -}, {H, A, B, S}, P, H")
 
 rules2=[
@@ -228,28 +366,30 @@ print("0-101+1|:", analizator22("0-101+1|"))
 
 print('\n\n\n')
 
-# print("Лабораторная работа №2. Задание по вариантам. Вариант 12.")
+print("Лабораторная работа 2. Задание 3.")
 
-# # Создание правил языка для задания по варианту
-# rules2 = [
-# Rule("S", "1C"),
-# Rule("S", "0D"),
-# Rule("C", "0D"),
-# Rule("C", "0S"),
-# Rule("C", "1"),
-# Rule("D", "1C"),
-# Rule("D", "1S"),
-# Rule("D", "0")
-# ]
+print("\nГрамматика языка: G = ({0, 1, e}, {H, A, B, D, S}, P, H")
+# Создание правил языка для задания по варианту
+rules3 = [
+Rule("S", "S0"),
+Rule("S", "0S"),
+Rule("S", "D"),
+Rule("D", "DD"),
+Rule("D", "1A"),
+Rule("D", "e"),
+Rule("A", "0B"),
+Rule("A", "e"),
+Rule("B", "0A"),
+Rule("B", "0")
+]
 
-# print_rules(rules2)
+language3 = gram.Language(rules3)
+print("\nПравила:")
+print(language3.get_rules())
+print("Язык, который порождает эта грамматика:")
+language3.find_language()
 
-# analiz_str = "0101"
-# print(f"Строка для анализа: {analiz_str}")
-# print("Анализатор:", analizator2(analiz_str))
 
-# print("Диаграмма переходов:")
-# diagr = [
-# [" ", "C", "D", "S"],
-# ["0", " ", "C,D", "C"],
-# ["1", "S,D", " ", "D"]]
+analiz_str = "100"
+print(f"Строка для анализа: {analiz_str}")
+print("Анализатор:", analizator23(analiz_str))
