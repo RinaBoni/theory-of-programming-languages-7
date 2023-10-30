@@ -234,6 +234,76 @@ def analizator22(text):
 class State3:
     H, D, A, B, S, ERROR = range(6)
 
+def analizator3(text):
+    current_state = State3.H
+    # count = 0
+    # txtsize = len(text)
+    count = len(text)-1
+    txtsize = 0
+    res = ""
+    while current_state != State3.ERROR and current_state != State3.S and count >= txtsize:
+        # print(state_to_string(current_state))
+
+        match current_state:
+
+            case State3.H:
+                if text[count] in ('e'):
+                    current_state = State3.D
+                    # print('H->D\n')
+                elif text[count] in ('e'):
+                    current_state = State3.A
+                    # print('H->A\n')
+                elif text[count] in ('0'):
+                    current_state = State3.B
+                    # print('H->B\n')
+                else:
+                    current_state = State3.ERROR
+
+            case State3.B:
+                if text[count] in ('0'):
+                    current_state = State3.A
+                    # print('B->A\n')
+                else:
+                    current_state = State3.ERROR
+
+            case State3.A:
+                if text[count] in ('0'):
+                    current_state = State3.B
+                    # print('A->B\n')
+                elif text[count] in ('1'):
+                    current_state = State3.S
+                    # print('A->S\n')
+                else:
+                    current_state = State3.ERROR
+
+            case State3.D:
+                # print('D1->S\n')
+                current_state = State3.S
+                # print('D->S\n')
+
+            case State3.D:
+                current_state = State3.D
+                # print('D->D\n')
+
+            case State3.S:
+                if text[count] in ('0'):
+                    current_state = State3.S
+                    # print('S->S\n')
+                elif text[count] in ('0'):
+                    current_state = State3.S
+                else:
+                    current_state = State3.ERROR
+
+
+        res += state_to_string(current_state) + " "
+        # count += 1
+        count -= 1
+    if contains_S(res):
+        return "Цепочка принадлежит грамматике"
+    else:
+        return "Цепочка не принадлежит грамматике"
+
+
 # Анализатор для задания по варианту
 def analizator23(text):
     current_state = State3.H
@@ -289,16 +359,21 @@ def analizator23(text):
         elif current_state == State3.S:
             if text[count] in ('0'):
                 current_state = State3.S
-                print('S->S\n')
+                # print('S->S\n')
             # elif text[count] in ('0'):
             #     current_state = State3.S
             else:
                 current_state = State3.ERROR
         
+        # print(state_to_string(current_state))
         res += state_to_string(current_state) + " "
         # count += 1
         count -= 1
         #видит начало, не видит конца 
+    if contains_S(res):
+        return "Цепочка принадлежит грамматике"
+    else:
+        return "Цепочка не принадлежит грамматике"
 
 # Функция для печати диаграммы состояний на экран
 def print_diagram(a):
@@ -308,67 +383,68 @@ def print_diagram(a):
         print("|")
 
 
-print('\n\n\n')
+# print('\n\n\n')
 
-print("Лабораторная работа 2. Задание 1.")
-print("\nГрамматика языка: G = ({0, 1, .}, {N, P, S}, P, N")
+# print("Лабораторная работа 2. Задание 1.")
+# print("\nГрамматика языка: G = ({0, 1, .}, {N, P, S}, P, N")
 
-# Создание правил языка
-rules1 = [
-Rule("S", "S0"),
-Rule("S", "S1"),
-Rule("S", "P0"),
-Rule("S", "P1"),
-Rule("P", "N."),
-Rule("N", "0"),
-Rule("N", "1"),
-Rule("N", "N0"),
-Rule("N", "N1")
-]
+# # Создание правил языка
+# rules1 = [
+# Rule("S", "S0"),
+# Rule("S", "S1"),
+# Rule("S", "P0"),
+# Rule("S", "P1"),
+# Rule("P", "N."),
+# Rule("N", "0"),
+# Rule("N", "1"),
+# Rule("N", "N0"),
+# Rule("N", "N1")
+# ]
 
-language1 = gram.Language(rules1)
-print("\nПравила:")
-print(language1.get_rules())
-print("Язык, который порождает эта грамматика:")
-language1.find_language()
+# language1 = gram.Language(rules1)
+# print("\nПравила:")
+# print(language1.get_rules())
+# print("Язык, который порождает эта грамматика:")
+# language1.find_language()
 
-print("\n11.010:", analizator21("11.010"))
-print("0.1:", analizator21("0.1"))
-print("01.:", analizator21("01."))
-print("100:", analizator21("100"))
+# print("\n11.010:", analizator21("11.010"))
+# print("0.1:", analizator21("0.1"))
+# print("01.:", analizator21("01."))
+# print("100:", analizator21("100"))
 
-print('\n\n\n')
+# print('\n\n\n')
 
-print("Лабораторная работа 2. Задание 2.")
-print("\nГрамматика языка: G = ({0, 1, |, +, -}, {H, A, B, S}, P, H")
+# print("Лабораторная работа 2. Задание 2.")
+# print("\nГрамматика языка: G = ({0, 1, |, +, -}, {H, A, B, S}, P, H")
 
-rules2=[
-    Rule("S", "A|"),
-    Rule("A", "0"),
-    Rule("A", "1"),
-    Rule("A", "A0"),
-    Rule("A", "A1"),
-    Rule("A", "B0"),
-    Rule("A", "B1"),
-    Rule("B", "A+"),
-    Rule("B", "A-"),
-]
+# rules2=[
+#     Rule("S", "A|"),
+#     Rule("A", "0"),
+#     Rule("A", "1"),
+#     Rule("A", "A0"),
+#     Rule("A", "A1"),
+#     Rule("A", "B0"),
+#     Rule("A", "B1"),
+#     Rule("B", "A+"),
+#     Rule("B", "A-"),
+# ]
 
-language2 = gram.Language(rules2)
-print("\nПравила:")
-print(language2.get_rules())
-print("Язык, который порождает эта грамматика:")
-language2.find_language()
+# language2 = gram.Language(rules2)
+# print("\nПравила:")
+# print(language2.get_rules())
+# print("Язык, который порождает эта грамматика:")
+# language2.find_language()
 
-print("\n1011|:", analizator22("1011|"))
-print("10+011|:", analizator22("10+011|"))
-print("0-101+1|:", analizator22("0-101+1|"))
+# print("\n1011|:", analizator22("1011|"))
+# print("10+011|:", analizator22("10+011|"))
+# print("0-101+1|:", analizator22("0-101+1|"))
 
 print('\n\n\n')
 
 print("Лабораторная работа 2. Задание 3.")
 
 print("\nГрамматика языка: G = ({0, 1, e}, {H, A, B, D, S}, P, H")
+print('Это контекстно-свободная грамматика')
 # Создание правил языка для задания по варианту
 rules3 = [
 Rule("S", "S0"),
@@ -385,11 +461,24 @@ Rule("B", "0")
 
 language3 = gram.Language(rules3)
 print("\nПравила:")
-print(language3.get_rules())
-print("Язык, который порождает эта грамматика:")
-language3.find_language()
+print('S -> 0S | S0 | D\nD -> DD | 1A | ε\nA -> 0B | ε\nB -> 0A | 0')
+# print(language3.get_rules())
+print("\nЯзык, который порождает эта грамматика:")
+# language3.find_language()
+print('L = { \'1\'^n0,\'0\'^m0,\'ε\'^k0, | ni > 0, mi > 0, k > 0}')
 
+print('\nграмматика почти эквивалентная данной:')
+print('S -> 0S | S0 | D\nD -> DD | 1A | εA\nA -> 0B | εB | ε\nB -> 0A | 0')
 
 analiz_str = "100"
 print(f"Строка для анализа: {analiz_str}")
-print("Анализатор:", analizator23(analiz_str))
+print("Анализатор:", analizator3(analiz_str))
+analiz_str = "0100"
+print(f"Строка для анализа: {analiz_str}")
+print("Анализатор:", analizator3(analiz_str))
+analiz_str = "1"
+print(f"Строка для анализа: {analiz_str}")
+print("Анализатор:", analizator3(analiz_str))
+
+print('\n\n\n')
+
