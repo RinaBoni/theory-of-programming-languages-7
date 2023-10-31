@@ -73,16 +73,16 @@ def showStatesDiagram(self):
     #     rules += ts[i][1] + '; '
     #     edgesWithlabels.update({edge: rules[0:-2]})
 
-    pos = nx.spiral_layout(g)
-    g.add_edges_from(edges)
-    nx.draw(g, pos, with_labels=True, **options)
-    nx.draw_networkx_edge_labels(g, pos, edgesWithlabels)
+    # pos = nx.spiral_layout(g)
+    # g.add_edges_from(edges)
+    # nx.draw(g, pos, with_labels=True, **options)
+    # nx.draw_networkx_edge_labels(g, pos, edgesWithlabels)
 
-    for edge, label in edgesWithlabels.items():
-        if edge[0] == edge[1]:
-            x, y = pos[edge[0]]
-            plt.text(x, y + 0.25, label, ha='center', va='center')
-    plt.show()
+    # for edge, label in edgesWithlabels.items():
+    #     if edge[0] == edge[1]:
+    #         x, y = pos[edge[0]]
+    #         plt.text(x, y + 0.25, label, ha='center', va='center')
+    # plt.show()
 
 G = nx.DiGraph()
 
