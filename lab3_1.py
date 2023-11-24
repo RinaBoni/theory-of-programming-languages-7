@@ -29,7 +29,6 @@ class HashTable:
         while self.table[index] is not None:
             index = (index + 1) % self.size
             if index == initial_index:
-                # Хэш-таблица заполнена, вы можете добавить обработку этой ситуации по вашему усмотрению
                 raise ValueError("Хэш-таблица заполнена")
         self.table[index] = Node(key, identifier_id)
 
