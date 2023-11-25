@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\labsGurbatov\testlab4\bin\Debug\testlab4.exe.config
+C:\Users\User\Desktop\labsGurbatov\testlab4\bin\Debug\testlab4.exe
+C:\Users\User\Desktop\labsGurbatov\testlab4\bin\Debug\testlab4.pdb
+C:\Users\User\Desktop\labsGurbatov\testlab4\obj\Debug\testlab4.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\labsGurbatov\testlab4\obj\Debug\testlab4.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\labsGurbatov\testlab4\obj\Debug\testlab4.Form1.resources
+C:\Users\User\Desktop\labsGurbatov\testlab4\obj\Debug\testlab4.Properties.Resources.resources
+C:\Users\User\Desktop\labsGurbatov\testlab4\obj\Debug\testlab4.csproj.GenerateResource.cache
+C:\Users\User\Desktop\labsGurbatov\testlab4\obj\Debug\testlab4.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\labsGurbatov\testlab4\obj\Debug\testlab4.exe
+C:\Users\User\Desktop\labsGurbatov\testlab4\obj\Debug\testlab4.pdb
