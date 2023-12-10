@@ -22,7 +22,8 @@ class SyntaxAnalyzer:
     def require_lexem(self, lexer, exepted):
         '''проверяет, совпадает ли текущая лексема с одним из ожидаемых типов'''
         if lexer:
-            value = [item['token_name'] for item in lexer]
+            value = lexer['token_name']
+            # value = [item['token_name'] for item in lexer]
             for i in range(len(exepted)):
                 if value == exepted[i]:
                     return True
@@ -32,31 +33,53 @@ class SyntaxAnalyzer:
 
     def kword(self, lexer):
         '''проверяет структуру кода, ожидая определенной последовательности лексем и возвращая ошибки, если эта последовательность нарушена'''
-        if not self.require_lexem(lexer, ['IDENT', 'NUM']):
-            return self.errors['EXECPTED_ID_OR_NUM']
         
-        result = self.expression(lexer)
-        if result != self.errors['OK']:
-            return result
+       
         
-        if not self.require_lexem(lexer, ['KWORD_FOR', 'KWORD_DO']):
-            return self.errors['EXEPTED_KWORD']
         
         if not self.require_lexem(lexer, ['LBRACE']):
             return self.errors['EXEPTED_LBRACE']
         
-        if not self.require_lexem(lexer, ['IDENT', 'NUM']):
-            return self.errors['EXECPTED_ID_OR_NUM']
+        result = self.declaration(lexer)
+        if result != self.errors['OK']:
+            return result
+        
+        if not self.require_lexem(lexer, ['DELIM']):
+            return self.errors['EXEPTED_DELIMITOR']
         
         result = self.expression(lexer)
         if result != self.errors['OK']:
             return result
         
-        if not self.require_lexem(lexer, ['RBRACE']):
-            return self.errors['EXEPTED_RBRACE']
+        if not self.require_lexem(lexer, ['DELIM']):
+            return self.errors['EXEPTED_DELIMITOR']
+        
+        result = self.expression(lexer)
+        if result != self.errors['OK']:
+            return result
         
         if not self.require_lexem(lexer, ['DELIM']):
             return self.errors['EXEPTED_DELIMITOR']
+        
+        result = self.expression(lexer)
+        if result != self.errors['OK']:
+            return result
+        
+        if not self.require_lexem(lexer, ['DELIM']):
+            return self.errors['EXEPTED_DELIMITOR']
+        
+
+        if not self.require_lexem(lexer, ['RBRACE']):
+            return self.errors['EXEPTED_RBRACE']
+        
+        if not self.require_lexem(lexer, ['KWORD_DO']):
+            return self.errors['EXEPTED_KWORD']
+        
+        result = self.statement(lexer)
+    
+        if result != self.errors['OK']:
+            return result
+    
         
         return self.errors['OK']
     
@@ -65,7 +88,7 @@ class SyntaxAnalyzer:
     def expression(self, lexer):
         '''анализа выражений, содержащих операторы, возвращает ошибку, если структура выражения не соответствует ожидаемой'''
         if lexer:
-            value = [item['token_name'] for item in lexer]
+            value = value = lexer['token_name']
             if value == 'OPER':
                 if not self.require_lexem(lexer, ['OPER']):
                     return self.errors['EXEPTED_OPERAND']
@@ -101,7 +124,7 @@ class SyntaxAnalyzer:
     
     def statement(self, lexer):
         '''определяет тип текущей лексемы и выполняет соответствующие операции в зависимости от этого типа, возвращая ошибку, если структура оператора не соответствует ожидаемой'''
-        value = [item['token_name'] for item in lexer]
+        value  = lexer['token_name']
         if value == 'IDENT':
             return self.declaration(lexer)
         
@@ -117,10 +140,12 @@ class SyntaxAnalyzer:
                 return self.errors['EXEPTED_RBRACE']
             return self.errors['OK']
         
-        if value == 'KWORD_DO':
-            return self.kword(lexer)
-        
         if value == 'KWORD_FOR':
+            result = self.kword(lexer)
+            if result != self.errors['OK']:
+                    return result
+        
+        if value == 'KWORD_DO':
             return self.errors['EXEPTED_KWORD']
         
         return self.errors['UNRECOGNIZED_STATEMENT']

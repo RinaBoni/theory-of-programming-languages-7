@@ -116,7 +116,6 @@ class Lexer:
                 self.tokens.append(token)
                 CS = self.states["H"]
         self.curr = self.tokens[0]
-        print(self.tokens)
         return self.tokens
         
         
