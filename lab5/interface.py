@@ -31,22 +31,20 @@ def convert():
 
     for item in output_s:
         output_str_lex.insert(tk.END, str(item) + '\n'+ '\n')
-        print(item)
-        result = syntax_analyzer_instance.statement(item)
-        value = item['token_name']
+        
+    result = syntax_analyzer_instance.statement(output_s)
+    print('\n\n\n')
+    print(result)
+    print('\n\n\n')
+    for item in output_s:
         index = item['index']
         value = item['token_value']
-        if result != syntax_analyzer_instance.errors['OK']:
-            err = {'index': index, 'value': value, 'error type': result}
+        # if result != syntax_analyzer_instance.errors['OK']:
+        err = {'index': index, 'value': value, 'error type': result}
 
         output_str_syn.insert(tk.END, str(err) + '\n'+ '\n')
 
-            
 
-
-    
-    
-    
 
 
 win = tk.Tk()   #создаем окно
@@ -114,4 +112,6 @@ win.grid_columnconfigure(3, minsize=300)
 #         on_press=on_press) as listener:
 #     win.mainloop()  #запускаем 
 #     listener.join()
+
+
 win.mainloop()  #запускаем окно

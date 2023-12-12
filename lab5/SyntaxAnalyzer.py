@@ -1,4 +1,10 @@
 from Lexer import Lexer
+import Node
+
+def list_to_ll(list):
+    linked_list = Node.LinkedList()
+    return linked_list.add_elements_from_list(list)
+
 class SyntaxAnalyzer:
     def __init__(self):
         self.keywords = ["do", "for"]
@@ -21,8 +27,11 @@ class SyntaxAnalyzer:
         
     def require_lexem(self, lexer, exepted):
         '''проверяет, совпадает ли текущая лексема с одним из ожидаемых типов'''
+        
         if lexer:
-            value = lexer['token_name']
+            value = lexer.data.get('token_name')
+            print(value)
+            # lexer.
             # value = [item['token_name'] for item in lexer]
             for i in range(len(exepted)):
                 if value == exepted[i]:
@@ -33,9 +42,6 @@ class SyntaxAnalyzer:
 
     def kword(self, lexer):
         '''проверяет структуру кода, ожидая определенной последовательности лексем и возвращая ошибки, если эта последовательность нарушена'''
-        
-       
-        
         
         if not self.require_lexem(lexer, ['LBRACE']):
             return self.errors['EXEPTED_LBRACE']
@@ -120,33 +126,40 @@ class SyntaxAnalyzer:
         
         return self.errors['OK']
     
+    def get_token_name():
+        
+        pass
     
-    
-    def statement(self, lexer):
+    def statement(self, list_lexer):
         '''определяет тип текущей лексемы и выполняет соответствующие операции в зависимости от этого типа, возвращая ошибку, если структура оператора не соответствует ожидаемой'''
-        value  = lexer['token_name']
-        if value == 'IDENT':
-            return self.declaration(lexer)
-        
-        if value == 'LBRACE':
-            if not self.require_lexem(lexer, ['IDENT', 'NUM']):
-                return self.errors['EXECPTED_ID']
+        lexer = Node.LinkedList()
+        lexer.add_elements_from_list(list_lexer)
+        current_node = lexer.get_head()
+        lexer.print_LL()
+        while current_node:
+            value  =  current_node.data.get('token_name')
+            if value == 'IDENT':
+                return self.declaration(current_node)
             
-            result = self.expression(lexer)
-            if result != self.errors['OK']:
-                    return result
+            if value == 'LBRACE':
+                if not self.require_lexem(current_node, ['IDENT', 'NUM']):
+                    return self.errors['EXECPTED_ID']
                 
-            if not self.require_lexem(lexer, ['RBRACE']):
-                return self.errors['EXEPTED_RBRACE']
-            return self.errors['OK']
+                result = self.expression(current_node)
+                if result != self.errors['OK']:
+                        return result
+                    
+                if not self.require_lexem(current_node, ['RBRACE']):
+                    return self.errors['EXEPTED_RBRACE']
+                return self.errors['OK']
+            
+            if value == 'KWORD_FOR':
+                result = self.kword(current_node)
+                if result != self.errors['OK']:
+                        return result
+            
+            if value == 'KWORD_DO':
+                return self.errors['EXEPTED_KWORD']
+            
+            return self.errors['UNRECOGNIZED_STATEMENT']
         
-        if value == 'KWORD_FOR':
-            result = self.kword(lexer)
-            if result != self.errors['OK']:
-                    return result
-        
-        if value == 'KWORD_DO':
-            return self.errors['EXEPTED_KWORD']
-        
-        return self.errors['UNRECOGNIZED_STATEMENT']
-    

@@ -1,3 +1,5 @@
+import Node
+
 class Lexer:
     def __init__(self):
         self.keywords = ["do", "for"]
@@ -22,11 +24,13 @@ class Lexer:
             "ERROR": 'ERROR'}
 
         self.tokens = []
-        self.curr = None
+        self.next = None
+        self.llist = Node.LinkedList()
 
-    def getNext(self):
-        self.curr = self.curr.next
-        return self.curr
+
+    # def getNext(self):
+    #     self.curr = self.curr.next
+    #     return self.curr
 
     def getTokens(self):
         return self.tokens
@@ -55,6 +59,7 @@ class Lexer:
                 elif string[i] == '>' or string[i] == '<' or string[i] == '=' or string[i] == '+' or string[i] == '-':
                     token = {"token_name": self.tok_names["OPER"], "token_value": string[i], "index": i}
                     self.tokens.append(token)
+                    self.llist.insert_at_end(token)
                     CS = self.states["H"]
                     i += 1
                 else:
@@ -63,6 +68,7 @@ class Lexer:
                 if string[i] == '=':
                     tok = {"token_name": self.tok_names["ASIGN"], "token_value": ":=", "index": i}
                     self.tokens.append(tok)
+                    self.llist.insert_at_end(tok)
                     CS = self.states["H"]
                     i += 1
                 else:
@@ -75,6 +81,7 @@ class Lexer:
                     if string[i] == ')':
                         tok["token_name"] = self.tok_names["RBRACE"]
                     self.tokens.append(tok)
+                    self.llist.insert_at_end(tok)
                     CS = self.states["H"]
                     i += 1
                 else:
@@ -86,6 +93,7 @@ class Lexer:
             elif CS == self.states["ERR"]:
                 token = {"token_name": self.tok_names["ERROR"], "token_value": "at " + str(i) + " " + string[i], "index": i}
                 self.tokens.append(token)
+                self.llist.insert_at_end(token)
                 CS = self.states["H"]
                 i += 1
             elif CS == self.states["ID"]:
@@ -104,6 +112,7 @@ class Lexer:
                 token["token_value"] = id
                 token["index"] = i
                 self.tokens.append(token)
+                self.llist.insert_at_end(token)
                 CS = self.states["H"]
             elif CS == self.states["NM"]:
                 token = {"token_name": self.tok_names["NUM"], "token_value": "", "index": i}
@@ -114,9 +123,13 @@ class Lexer:
                 token["token_value"] = num
                 token["index"] = i
                 self.tokens.append(token)
+                self.llist.insert_at_end(token)
                 CS = self.states["H"]
+                
         self.curr = self.tokens[0]
-        return self.tokens
+        
+        # return self.tokens
+        return self.llist
         
         
 def output(input_string):

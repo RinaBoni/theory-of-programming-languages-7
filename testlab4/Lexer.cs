@@ -36,8 +36,10 @@ namespace testlab4
             KeyValuePairs.Add(tok_names.RBRACE, "RBRACE");
 
         }
+        
         private LinkedList<token> tokens;
         public LinkedListNode<token> curr;
+
         public LinkedListNode<token> getNext()
         {
             
