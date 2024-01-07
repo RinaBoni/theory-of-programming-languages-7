@@ -1,6 +1,6 @@
 import tkinter as tk
-import analizator as analiz
-# from SyntaxAnalyzer import SyntaxAnalyzer
+import Lexer
+from SyntaxAnalyzer import SyntaxAnalyzer
 from pynput import keyboard
 
 # def convert():
@@ -26,24 +26,25 @@ from pynput import keyboard
 
 def convert():
     input_s = input_str.get('1.0', tk.END)
-    lex_result = analiz.lex_analization(input_s)
-    syn_result = analiz.syn_analization(input_s)
-    output_str_lex.delete("1.0", tk.END)
-    output_str_syn.delete("1.0", tk.END)
+    output_s = Lexer.output(input_s)
+    syntax_analyzer_instance = SyntaxAnalyzer()
 
-    for item in lex_result:
+    for item in output_s:
         output_str_lex.insert(tk.END, str(item) + '\n'+ '\n')
+        
+    result = syntax_analyzer_instance.statement(output_s)
+    print('\n\n\n')
+    print(result)
+    print('\n\n\n')
+    for item in output_s:
+        index = item['index']
+        value = item['token_value']
+        # if result != syntax_analyzer_instance.errors['OK']:
+        err = {'index': index, 'value': value, 'error type': result}
 
-    output_str_syn.insert(tk.END, str(syn_result) + '\n'+ '\n')
-    # for item in syn_result:
+        output_str_syn.insert(tk.END, str(err) + '\n'+ '\n')
 
 
-            
-
-
-    
-    
-    
 
 
 win = tk.Tk()   #создаем окно
@@ -111,4 +112,6 @@ win.grid_columnconfigure(3, minsize=300)
 #         on_press=on_press) as listener:
 #     win.mainloop()  #запускаем 
 #     listener.join()
+
+
 win.mainloop()  #запускаем окно

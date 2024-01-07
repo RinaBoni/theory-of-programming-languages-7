@@ -1,0 +1,824 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> expression
+Rule 1     expression -> KWORD expression KWORD expression
+Rule 2     expression -> IDENTIFIER
+Rule 3     expression -> FLOAT
+Rule 4     expression -> INTEGER
+Rule 5     expression -> expression MULTIPLY expression
+Rule 6     expression -> expression DIVIDE expression
+Rule 7     expression -> expression PLUS expression
+Rule 8     expression -> expression PLUS PLUS
+Rule 9     expression -> expression MINUS expression
+Rule 10    expression -> expression COMPARISON expression
+Rule 11    expression -> IDENTIFIER ASSIGN expression
+Rule 12    expression -> LPAREN expression RPAREN
+Rule 13    expression -> CHAR_CONSTANT
+Rule 14    expression -> expression SEMICOLON expression
+
+Terminals, with rules where they appear
+
+ASSIGN               : 11
+CHAR_CONSTANT        : 13
+COMPARISON           : 10
+DIVIDE               : 6
+FLOAT                : 3
+IDENTIFIER           : 2 11
+INTEGER              : 4
+KWORD                : 1 1
+LPAREN               : 12
+MINUS                : 9
+MULTIPLY             : 5
+PLUS                 : 7 8 8
+RPAREN               : 12
+SEMICOLON            : 14
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 1 1 5 5 6 6 7 7 8 9 9 10 10 11 12 14 14 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expression
+    (1) expression -> . KWORD expression KWORD expression
+    (2) expression -> . IDENTIFIER
+    (3) expression -> . FLOAT
+    (4) expression -> . INTEGER
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression PLUS expression
+    (8) expression -> . expression PLUS PLUS
+    (9) expression -> . expression MINUS expression
+    (10) expression -> . expression COMPARISON expression
+    (11) expression -> . IDENTIFIER ASSIGN expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . CHAR_CONSTANT
+    (14) expression -> . expression SEMICOLON expression
+
+    KWORD           shift and go to state 2
+    IDENTIFIER      shift and go to state 3
+    FLOAT           shift and go to state 4
+    INTEGER         shift and go to state 5
+    LPAREN          shift and go to state 6
+    CHAR_CONSTANT   shift and go to state 7
+
+    expression                     shift and go to state 1
+
+state 1
+
+    (0) S' -> expression .
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . PLUS expression
+    (8) expression -> expression . PLUS PLUS
+    (9) expression -> expression . MINUS expression
+    (10) expression -> expression . COMPARISON expression
+    (14) expression -> expression . SEMICOLON expression
+
+    MULTIPLY        shift and go to state 8
+    DIVIDE          shift and go to state 9
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    COMPARISON      shift and go to state 12
+    SEMICOLON       shift and go to state 13
+
+
+state 2
+
+    (1) expression -> KWORD . expression KWORD expression
+    (1) expression -> . KWORD expression KWORD expression
+    (2) expression -> . IDENTIFIER
+    (3) expression -> . FLOAT
+    (4) expression -> . INTEGER
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression PLUS expression
+    (8) expression -> . expression PLUS PLUS
+    (9) expression -> . expression MINUS expression
+    (10) expression -> . expression COMPARISON expression
+    (11) expression -> . IDENTIFIER ASSIGN expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . CHAR_CONSTANT
+    (14) expression -> . expression SEMICOLON expression
+
+    KWORD           shift and go to state 2
+    IDENTIFIER      shift and go to state 3
+    FLOAT           shift and go to state 4
+    INTEGER         shift and go to state 5
+    LPAREN          shift and go to state 6
+    CHAR_CONSTANT   shift and go to state 7
+
+    expression                     shift and go to state 14
+
+state 3
+
+    (2) expression -> IDENTIFIER .
+    (11) expression -> IDENTIFIER . ASSIGN expression
+
+    MULTIPLY        reduce using rule 2 (expression -> IDENTIFIER .)
+    DIVIDE          reduce using rule 2 (expression -> IDENTIFIER .)
+    PLUS            reduce using rule 2 (expression -> IDENTIFIER .)
+    MINUS           reduce using rule 2 (expression -> IDENTIFIER .)
+    COMPARISON      reduce using rule 2 (expression -> IDENTIFIER .)
+    SEMICOLON       reduce using rule 2 (expression -> IDENTIFIER .)
+    $end            reduce using rule 2 (expression -> IDENTIFIER .)
+    KWORD           reduce using rule 2 (expression -> IDENTIFIER .)
+    RPAREN          reduce using rule 2 (expression -> IDENTIFIER .)
+    ASSIGN          shift and go to state 15
+
+
+state 4
+
+    (3) expression -> FLOAT .
+
+    MULTIPLY        reduce using rule 3 (expression -> FLOAT .)
+    DIVIDE          reduce using rule 3 (expression -> FLOAT .)
+    PLUS            reduce using rule 3 (expression -> FLOAT .)
+    MINUS           reduce using rule 3 (expression -> FLOAT .)
+    COMPARISON      reduce using rule 3 (expression -> FLOAT .)
+    SEMICOLON       reduce using rule 3 (expression -> FLOAT .)
+    $end            reduce using rule 3 (expression -> FLOAT .)
+    KWORD           reduce using rule 3 (expression -> FLOAT .)
+    RPAREN          reduce using rule 3 (expression -> FLOAT .)
+
+
+state 5
+
+    (4) expression -> INTEGER .
+
+    MULTIPLY        reduce using rule 4 (expression -> INTEGER .)
+    DIVIDE          reduce using rule 4 (expression -> INTEGER .)
+    PLUS            reduce using rule 4 (expression -> INTEGER .)
+    MINUS           reduce using rule 4 (expression -> INTEGER .)
+    COMPARISON      reduce using rule 4 (expression -> INTEGER .)
+    SEMICOLON       reduce using rule 4 (expression -> INTEGER .)
+    $end            reduce using rule 4 (expression -> INTEGER .)
+    KWORD           reduce using rule 4 (expression -> INTEGER .)
+    RPAREN          reduce using rule 4 (expression -> INTEGER .)
+
+
+state 6
+
+    (12) expression -> LPAREN . expression RPAREN
+    (1) expression -> . KWORD expression KWORD expression
+    (2) expression -> . IDENTIFIER
+    (3) expression -> . FLOAT
+    (4) expression -> . INTEGER
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression PLUS expression
+    (8) expression -> . expression PLUS PLUS
+    (9) expression -> . expression MINUS expression
+    (10) expression -> . expression COMPARISON expression
+    (11) expression -> . IDENTIFIER ASSIGN expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . CHAR_CONSTANT
+    (14) expression -> . expression SEMICOLON expression
+
+    KWORD           shift and go to state 2
+    IDENTIFIER      shift and go to state 3
+    FLOAT           shift and go to state 4
+    INTEGER         shift and go to state 5
+    LPAREN          shift and go to state 6
+    CHAR_CONSTANT   shift and go to state 7
+
+    expression                     shift and go to state 16
+
+state 7
+
+    (13) expression -> CHAR_CONSTANT .
+
+    MULTIPLY        reduce using rule 13 (expression -> CHAR_CONSTANT .)
+    DIVIDE          reduce using rule 13 (expression -> CHAR_CONSTANT .)
+    PLUS            reduce using rule 13 (expression -> CHAR_CONSTANT .)
+    MINUS           reduce using rule 13 (expression -> CHAR_CONSTANT .)
+    COMPARISON      reduce using rule 13 (expression -> CHAR_CONSTANT .)
+    SEMICOLON       reduce using rule 13 (expression -> CHAR_CONSTANT .)
+    $end            reduce using rule 13 (expression -> CHAR_CONSTANT .)
+    KWORD           reduce using rule 13 (expression -> CHAR_CONSTANT .)
+    RPAREN          reduce using rule 13 (expression -> CHAR_CONSTANT .)
+
+
+state 8
+
+    (5) expression -> expression MULTIPLY . expression
+    (1) expression -> . KWORD expression KWORD expression
+    (2) expression -> . IDENTIFIER
+    (3) expression -> . FLOAT
+    (4) expression -> . INTEGER
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression PLUS expression
+    (8) expression -> . expression PLUS PLUS
+    (9) expression -> . expression MINUS expression
+    (10) expression -> . expression COMPARISON expression
+    (11) expression -> . IDENTIFIER ASSIGN expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . CHAR_CONSTANT
+    (14) expression -> . expression SEMICOLON expression
+
+    KWORD           shift and go to state 2
+    IDENTIFIER      shift and go to state 3
+    FLOAT           shift and go to state 4
+    INTEGER         shift and go to state 5
+    LPAREN          shift and go to state 6
+    CHAR_CONSTANT   shift and go to state 7
+
+    expression                     shift and go to state 17
+
+state 9
+
+    (6) expression -> expression DIVIDE . expression
+    (1) expression -> . KWORD expression KWORD expression
+    (2) expression -> . IDENTIFIER
+    (3) expression -> . FLOAT
+    (4) expression -> . INTEGER
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression PLUS expression
+    (8) expression -> . expression PLUS PLUS
+    (9) expression -> . expression MINUS expression
+    (10) expression -> . expression COMPARISON expression
+    (11) expression -> . IDENTIFIER ASSIGN expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . CHAR_CONSTANT
+    (14) expression -> . expression SEMICOLON expression
+
+    KWORD           shift and go to state 2
+    IDENTIFIER      shift and go to state 3
+    FLOAT           shift and go to state 4
+    INTEGER         shift and go to state 5
+    LPAREN          shift and go to state 6
+    CHAR_CONSTANT   shift and go to state 7
+
+    expression                     shift and go to state 18
+
+state 10
+
+    (7) expression -> expression PLUS . expression
+    (8) expression -> expression PLUS . PLUS
+    (1) expression -> . KWORD expression KWORD expression
+    (2) expression -> . IDENTIFIER
+    (3) expression -> . FLOAT
+    (4) expression -> . INTEGER
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression PLUS expression
+    (8) expression -> . expression PLUS PLUS
+    (9) expression -> . expression MINUS expression
+    (10) expression -> . expression COMPARISON expression
+    (11) expression -> . IDENTIFIER ASSIGN expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . CHAR_CONSTANT
+    (14) expression -> . expression SEMICOLON expression
+
+    PLUS            shift and go to state 20
+    KWORD           shift and go to state 2
+    IDENTIFIER      shift and go to state 3
+    FLOAT           shift and go to state 4
+    INTEGER         shift and go to state 5
+    LPAREN          shift and go to state 6
+    CHAR_CONSTANT   shift and go to state 7
+
+    expression                     shift and go to state 19
+
+state 11
+
+    (9) expression -> expression MINUS . expression
+    (1) expression -> . KWORD expression KWORD expression
+    (2) expression -> . IDENTIFIER
+    (3) expression -> . FLOAT
+    (4) expression -> . INTEGER
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression PLUS expression
+    (8) expression -> . expression PLUS PLUS
+    (9) expression -> . expression MINUS expression
+    (10) expression -> . expression COMPARISON expression
+    (11) expression -> . IDENTIFIER ASSIGN expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . CHAR_CONSTANT
+    (14) expression -> . expression SEMICOLON expression
+
+    KWORD           shift and go to state 2
+    IDENTIFIER      shift and go to state 3
+    FLOAT           shift and go to state 4
+    INTEGER         shift and go to state 5
+    LPAREN          shift and go to state 6
+    CHAR_CONSTANT   shift and go to state 7
+
+    expression                     shift and go to state 21
+
+state 12
+
+    (10) expression -> expression COMPARISON . expression
+    (1) expression -> . KWORD expression KWORD expression
+    (2) expression -> . IDENTIFIER
+    (3) expression -> . FLOAT
+    (4) expression -> . INTEGER
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression PLUS expression
+    (8) expression -> . expression PLUS PLUS
+    (9) expression -> . expression MINUS expression
+    (10) expression -> . expression COMPARISON expression
+    (11) expression -> . IDENTIFIER ASSIGN expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . CHAR_CONSTANT
+    (14) expression -> . expression SEMICOLON expression
+
+    KWORD           shift and go to state 2
+    IDENTIFIER      shift and go to state 3
+    FLOAT           shift and go to state 4
+    INTEGER         shift and go to state 5
+    LPAREN          shift and go to state 6
+    CHAR_CONSTANT   shift and go to state 7
+
+    expression                     shift and go to state 22
+
+state 13
+
+    (14) expression -> expression SEMICOLON . expression
+    (1) expression -> . KWORD expression KWORD expression
+    (2) expression -> . IDENTIFIER
+    (3) expression -> . FLOAT
+    (4) expression -> . INTEGER
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression PLUS expression
+    (8) expression -> . expression PLUS PLUS
+    (9) expression -> . expression MINUS expression
+    (10) expression -> . expression COMPARISON expression
+    (11) expression -> . IDENTIFIER ASSIGN expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . CHAR_CONSTANT
+    (14) expression -> . expression SEMICOLON expression
+
+    KWORD           shift and go to state 2
+    IDENTIFIER      shift and go to state 3
+    FLOAT           shift and go to state 4
+    INTEGER         shift and go to state 5
+    LPAREN          shift and go to state 6
+    CHAR_CONSTANT   shift and go to state 7
+
+    expression                     shift and go to state 23
+
+state 14
+
+    (1) expression -> KWORD expression . KWORD expression
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . PLUS expression
+    (8) expression -> expression . PLUS PLUS
+    (9) expression -> expression . MINUS expression
+    (10) expression -> expression . COMPARISON expression
+    (14) expression -> expression . SEMICOLON expression
+
+    KWORD           shift and go to state 24
+    MULTIPLY        shift and go to state 8
+    DIVIDE          shift and go to state 9
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    COMPARISON      shift and go to state 12
+    SEMICOLON       shift and go to state 13
+
+
+state 15
+
+    (11) expression -> IDENTIFIER ASSIGN . expression
+    (1) expression -> . KWORD expression KWORD expression
+    (2) expression -> . IDENTIFIER
+    (3) expression -> . FLOAT
+    (4) expression -> . INTEGER
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression PLUS expression
+    (8) expression -> . expression PLUS PLUS
+    (9) expression -> . expression MINUS expression
+    (10) expression -> . expression COMPARISON expression
+    (11) expression -> . IDENTIFIER ASSIGN expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . CHAR_CONSTANT
+    (14) expression -> . expression SEMICOLON expression
+
+    KWORD           shift and go to state 2
+    IDENTIFIER      shift and go to state 3
+    FLOAT           shift and go to state 4
+    INTEGER         shift and go to state 5
+    LPAREN          shift and go to state 6
+    CHAR_CONSTANT   shift and go to state 7
+
+    expression                     shift and go to state 25
+
+state 16
+
+    (12) expression -> LPAREN expression . RPAREN
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . PLUS expression
+    (8) expression -> expression . PLUS PLUS
+    (9) expression -> expression . MINUS expression
+    (10) expression -> expression . COMPARISON expression
+    (14) expression -> expression . SEMICOLON expression
+
+    RPAREN          shift and go to state 26
+    MULTIPLY        shift and go to state 8
+    DIVIDE          shift and go to state 9
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    COMPARISON      shift and go to state 12
+    SEMICOLON       shift and go to state 13
+
+
+state 17
+
+    (5) expression -> expression MULTIPLY expression .
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . PLUS expression
+    (8) expression -> expression . PLUS PLUS
+    (9) expression -> expression . MINUS expression
+    (10) expression -> expression . COMPARISON expression
+    (14) expression -> expression . SEMICOLON expression
+
+  ! shift/reduce conflict for MULTIPLY resolved as shift
+  ! shift/reduce conflict for DIVIDE resolved as shift
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for COMPARISON resolved as shift
+  ! shift/reduce conflict for SEMICOLON resolved as shift
+    $end            reduce using rule 5 (expression -> expression MULTIPLY expression .)
+    KWORD           reduce using rule 5 (expression -> expression MULTIPLY expression .)
+    RPAREN          reduce using rule 5 (expression -> expression MULTIPLY expression .)
+    MULTIPLY        shift and go to state 8
+    DIVIDE          shift and go to state 9
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    COMPARISON      shift and go to state 12
+    SEMICOLON       shift and go to state 13
+
+  ! MULTIPLY        [ reduce using rule 5 (expression -> expression MULTIPLY expression .) ]
+  ! DIVIDE          [ reduce using rule 5 (expression -> expression MULTIPLY expression .) ]
+  ! PLUS            [ reduce using rule 5 (expression -> expression MULTIPLY expression .) ]
+  ! MINUS           [ reduce using rule 5 (expression -> expression MULTIPLY expression .) ]
+  ! COMPARISON      [ reduce using rule 5 (expression -> expression MULTIPLY expression .) ]
+  ! SEMICOLON       [ reduce using rule 5 (expression -> expression MULTIPLY expression .) ]
+
+
+state 18
+
+    (6) expression -> expression DIVIDE expression .
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . PLUS expression
+    (8) expression -> expression . PLUS PLUS
+    (9) expression -> expression . MINUS expression
+    (10) expression -> expression . COMPARISON expression
+    (14) expression -> expression . SEMICOLON expression
+
+  ! shift/reduce conflict for MULTIPLY resolved as shift
+  ! shift/reduce conflict for DIVIDE resolved as shift
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for COMPARISON resolved as shift
+  ! shift/reduce conflict for SEMICOLON resolved as shift
+    $end            reduce using rule 6 (expression -> expression DIVIDE expression .)
+    KWORD           reduce using rule 6 (expression -> expression DIVIDE expression .)
+    RPAREN          reduce using rule 6 (expression -> expression DIVIDE expression .)
+    MULTIPLY        shift and go to state 8
+    DIVIDE          shift and go to state 9
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    COMPARISON      shift and go to state 12
+    SEMICOLON       shift and go to state 13
+
+  ! MULTIPLY        [ reduce using rule 6 (expression -> expression DIVIDE expression .) ]
+  ! DIVIDE          [ reduce using rule 6 (expression -> expression DIVIDE expression .) ]
+  ! PLUS            [ reduce using rule 6 (expression -> expression DIVIDE expression .) ]
+  ! MINUS           [ reduce using rule 6 (expression -> expression DIVIDE expression .) ]
+  ! COMPARISON      [ reduce using rule 6 (expression -> expression DIVIDE expression .) ]
+  ! SEMICOLON       [ reduce using rule 6 (expression -> expression DIVIDE expression .) ]
+
+
+state 19
+
+    (7) expression -> expression PLUS expression .
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . PLUS expression
+    (8) expression -> expression . PLUS PLUS
+    (9) expression -> expression . MINUS expression
+    (10) expression -> expression . COMPARISON expression
+    (14) expression -> expression . SEMICOLON expression
+
+  ! shift/reduce conflict for MULTIPLY resolved as shift
+  ! shift/reduce conflict for DIVIDE resolved as shift
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for COMPARISON resolved as shift
+  ! shift/reduce conflict for SEMICOLON resolved as shift
+    $end            reduce using rule 7 (expression -> expression PLUS expression .)
+    KWORD           reduce using rule 7 (expression -> expression PLUS expression .)
+    RPAREN          reduce using rule 7 (expression -> expression PLUS expression .)
+    MULTIPLY        shift and go to state 8
+    DIVIDE          shift and go to state 9
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    COMPARISON      shift and go to state 12
+    SEMICOLON       shift and go to state 13
+
+  ! MULTIPLY        [ reduce using rule 7 (expression -> expression PLUS expression .) ]
+  ! DIVIDE          [ reduce using rule 7 (expression -> expression PLUS expression .) ]
+  ! PLUS            [ reduce using rule 7 (expression -> expression PLUS expression .) ]
+  ! MINUS           [ reduce using rule 7 (expression -> expression PLUS expression .) ]
+  ! COMPARISON      [ reduce using rule 7 (expression -> expression PLUS expression .) ]
+  ! SEMICOLON       [ reduce using rule 7 (expression -> expression PLUS expression .) ]
+
+
+state 20
+
+    (8) expression -> expression PLUS PLUS .
+
+    MULTIPLY        reduce using rule 8 (expression -> expression PLUS PLUS .)
+    DIVIDE          reduce using rule 8 (expression -> expression PLUS PLUS .)
+    PLUS            reduce using rule 8 (expression -> expression PLUS PLUS .)
+    MINUS           reduce using rule 8 (expression -> expression PLUS PLUS .)
+    COMPARISON      reduce using rule 8 (expression -> expression PLUS PLUS .)
+    SEMICOLON       reduce using rule 8 (expression -> expression PLUS PLUS .)
+    $end            reduce using rule 8 (expression -> expression PLUS PLUS .)
+    KWORD           reduce using rule 8 (expression -> expression PLUS PLUS .)
+    RPAREN          reduce using rule 8 (expression -> expression PLUS PLUS .)
+
+
+state 21
+
+    (9) expression -> expression MINUS expression .
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . PLUS expression
+    (8) expression -> expression . PLUS PLUS
+    (9) expression -> expression . MINUS expression
+    (10) expression -> expression . COMPARISON expression
+    (14) expression -> expression . SEMICOLON expression
+
+  ! shift/reduce conflict for MULTIPLY resolved as shift
+  ! shift/reduce conflict for DIVIDE resolved as shift
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for COMPARISON resolved as shift
+  ! shift/reduce conflict for SEMICOLON resolved as shift
+    $end            reduce using rule 9 (expression -> expression MINUS expression .)
+    KWORD           reduce using rule 9 (expression -> expression MINUS expression .)
+    RPAREN          reduce using rule 9 (expression -> expression MINUS expression .)
+    MULTIPLY        shift and go to state 8
+    DIVIDE          shift and go to state 9
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    COMPARISON      shift and go to state 12
+    SEMICOLON       shift and go to state 13
+
+  ! MULTIPLY        [ reduce using rule 9 (expression -> expression MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 9 (expression -> expression MINUS expression .) ]
+  ! PLUS            [ reduce using rule 9 (expression -> expression MINUS expression .) ]
+  ! MINUS           [ reduce using rule 9 (expression -> expression MINUS expression .) ]
+  ! COMPARISON      [ reduce using rule 9 (expression -> expression MINUS expression .) ]
+  ! SEMICOLON       [ reduce using rule 9 (expression -> expression MINUS expression .) ]
+
+
+state 22
+
+    (10) expression -> expression COMPARISON expression .
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . PLUS expression
+    (8) expression -> expression . PLUS PLUS
+    (9) expression -> expression . MINUS expression
+    (10) expression -> expression . COMPARISON expression
+    (14) expression -> expression . SEMICOLON expression
+
+  ! shift/reduce conflict for MULTIPLY resolved as shift
+  ! shift/reduce conflict for DIVIDE resolved as shift
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for COMPARISON resolved as shift
+  ! shift/reduce conflict for SEMICOLON resolved as shift
+    $end            reduce using rule 10 (expression -> expression COMPARISON expression .)
+    KWORD           reduce using rule 10 (expression -> expression COMPARISON expression .)
+    RPAREN          reduce using rule 10 (expression -> expression COMPARISON expression .)
+    MULTIPLY        shift and go to state 8
+    DIVIDE          shift and go to state 9
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    COMPARISON      shift and go to state 12
+    SEMICOLON       shift and go to state 13
+
+  ! MULTIPLY        [ reduce using rule 10 (expression -> expression COMPARISON expression .) ]
+  ! DIVIDE          [ reduce using rule 10 (expression -> expression COMPARISON expression .) ]
+  ! PLUS            [ reduce using rule 10 (expression -> expression COMPARISON expression .) ]
+  ! MINUS           [ reduce using rule 10 (expression -> expression COMPARISON expression .) ]
+  ! COMPARISON      [ reduce using rule 10 (expression -> expression COMPARISON expression .) ]
+  ! SEMICOLON       [ reduce using rule 10 (expression -> expression COMPARISON expression .) ]
+
+
+state 23
+
+    (14) expression -> expression SEMICOLON expression .
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . PLUS expression
+    (8) expression -> expression . PLUS PLUS
+    (9) expression -> expression . MINUS expression
+    (10) expression -> expression . COMPARISON expression
+    (14) expression -> expression . SEMICOLON expression
+
+  ! shift/reduce conflict for MULTIPLY resolved as shift
+  ! shift/reduce conflict for DIVIDE resolved as shift
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for COMPARISON resolved as shift
+  ! shift/reduce conflict for SEMICOLON resolved as shift
+    $end            reduce using rule 14 (expression -> expression SEMICOLON expression .)
+    KWORD           reduce using rule 14 (expression -> expression SEMICOLON expression .)
+    RPAREN          reduce using rule 14 (expression -> expression SEMICOLON expression .)
+    MULTIPLY        shift and go to state 8
+    DIVIDE          shift and go to state 9
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    COMPARISON      shift and go to state 12
+    SEMICOLON       shift and go to state 13
+
+  ! MULTIPLY        [ reduce using rule 14 (expression -> expression SEMICOLON expression .) ]
+  ! DIVIDE          [ reduce using rule 14 (expression -> expression SEMICOLON expression .) ]
+  ! PLUS            [ reduce using rule 14 (expression -> expression SEMICOLON expression .) ]
+  ! MINUS           [ reduce using rule 14 (expression -> expression SEMICOLON expression .) ]
+  ! COMPARISON      [ reduce using rule 14 (expression -> expression SEMICOLON expression .) ]
+  ! SEMICOLON       [ reduce using rule 14 (expression -> expression SEMICOLON expression .) ]
+
+
+state 24
+
+    (1) expression -> KWORD expression KWORD . expression
+    (1) expression -> . KWORD expression KWORD expression
+    (2) expression -> . IDENTIFIER
+    (3) expression -> . FLOAT
+    (4) expression -> . INTEGER
+    (5) expression -> . expression MULTIPLY expression
+    (6) expression -> . expression DIVIDE expression
+    (7) expression -> . expression PLUS expression
+    (8) expression -> . expression PLUS PLUS
+    (9) expression -> . expression MINUS expression
+    (10) expression -> . expression COMPARISON expression
+    (11) expression -> . IDENTIFIER ASSIGN expression
+    (12) expression -> . LPAREN expression RPAREN
+    (13) expression -> . CHAR_CONSTANT
+    (14) expression -> . expression SEMICOLON expression
+
+    KWORD           shift and go to state 2
+    IDENTIFIER      shift and go to state 3
+    FLOAT           shift and go to state 4
+    INTEGER         shift and go to state 5
+    LPAREN          shift and go to state 6
+    CHAR_CONSTANT   shift and go to state 7
+
+    expression                     shift and go to state 27
+
+state 25
+
+    (11) expression -> IDENTIFIER ASSIGN expression .
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . PLUS expression
+    (8) expression -> expression . PLUS PLUS
+    (9) expression -> expression . MINUS expression
+    (10) expression -> expression . COMPARISON expression
+    (14) expression -> expression . SEMICOLON expression
+
+  ! shift/reduce conflict for MULTIPLY resolved as shift
+  ! shift/reduce conflict for DIVIDE resolved as shift
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for COMPARISON resolved as shift
+  ! shift/reduce conflict for SEMICOLON resolved as shift
+    $end            reduce using rule 11 (expression -> IDENTIFIER ASSIGN expression .)
+    KWORD           reduce using rule 11 (expression -> IDENTIFIER ASSIGN expression .)
+    RPAREN          reduce using rule 11 (expression -> IDENTIFIER ASSIGN expression .)
+    MULTIPLY        shift and go to state 8
+    DIVIDE          shift and go to state 9
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    COMPARISON      shift and go to state 12
+    SEMICOLON       shift and go to state 13
+
+  ! MULTIPLY        [ reduce using rule 11 (expression -> IDENTIFIER ASSIGN expression .) ]
+  ! DIVIDE          [ reduce using rule 11 (expression -> IDENTIFIER ASSIGN expression .) ]
+  ! PLUS            [ reduce using rule 11 (expression -> IDENTIFIER ASSIGN expression .) ]
+  ! MINUS           [ reduce using rule 11 (expression -> IDENTIFIER ASSIGN expression .) ]
+  ! COMPARISON      [ reduce using rule 11 (expression -> IDENTIFIER ASSIGN expression .) ]
+  ! SEMICOLON       [ reduce using rule 11 (expression -> IDENTIFIER ASSIGN expression .) ]
+
+
+state 26
+
+    (12) expression -> LPAREN expression RPAREN .
+
+    MULTIPLY        reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    DIVIDE          reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    PLUS            reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    MINUS           reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    COMPARISON      reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    SEMICOLON       reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    $end            reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    KWORD           reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+
+
+state 27
+
+    (1) expression -> KWORD expression KWORD expression .
+    (5) expression -> expression . MULTIPLY expression
+    (6) expression -> expression . DIVIDE expression
+    (7) expression -> expression . PLUS expression
+    (8) expression -> expression . PLUS PLUS
+    (9) expression -> expression . MINUS expression
+    (10) expression -> expression . COMPARISON expression
+    (14) expression -> expression . SEMICOLON expression
+
+  ! shift/reduce conflict for MULTIPLY resolved as shift
+  ! shift/reduce conflict for DIVIDE resolved as shift
+  ! shift/reduce conflict for PLUS resolved as shift
+  ! shift/reduce conflict for MINUS resolved as shift
+  ! shift/reduce conflict for COMPARISON resolved as shift
+  ! shift/reduce conflict for SEMICOLON resolved as shift
+    $end            reduce using rule 1 (expression -> KWORD expression KWORD expression .)
+    KWORD           reduce using rule 1 (expression -> KWORD expression KWORD expression .)
+    RPAREN          reduce using rule 1 (expression -> KWORD expression KWORD expression .)
+    MULTIPLY        shift and go to state 8
+    DIVIDE          shift and go to state 9
+    PLUS            shift and go to state 10
+    MINUS           shift and go to state 11
+    COMPARISON      shift and go to state 12
+    SEMICOLON       shift and go to state 13
+
+  ! MULTIPLY        [ reduce using rule 1 (expression -> KWORD expression KWORD expression .) ]
+  ! DIVIDE          [ reduce using rule 1 (expression -> KWORD expression KWORD expression .) ]
+  ! PLUS            [ reduce using rule 1 (expression -> KWORD expression KWORD expression .) ]
+  ! MINUS           [ reduce using rule 1 (expression -> KWORD expression KWORD expression .) ]
+  ! COMPARISON      [ reduce using rule 1 (expression -> KWORD expression KWORD expression .) ]
+  ! SEMICOLON       [ reduce using rule 1 (expression -> KWORD expression KWORD expression .) ]
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for MULTIPLY in state 17 resolved as shift
+WARNING: shift/reduce conflict for DIVIDE in state 17 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 17 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 17 resolved as shift
+WARNING: shift/reduce conflict for COMPARISON in state 17 resolved as shift
+WARNING: shift/reduce conflict for SEMICOLON in state 17 resolved as shift
+WARNING: shift/reduce conflict for MULTIPLY in state 18 resolved as shift
+WARNING: shift/reduce conflict for DIVIDE in state 18 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 18 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 18 resolved as shift
+WARNING: shift/reduce conflict for COMPARISON in state 18 resolved as shift
+WARNING: shift/reduce conflict for SEMICOLON in state 18 resolved as shift
+WARNING: shift/reduce conflict for MULTIPLY in state 19 resolved as shift
+WARNING: shift/reduce conflict for DIVIDE in state 19 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 19 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 19 resolved as shift
+WARNING: shift/reduce conflict for COMPARISON in state 19 resolved as shift
+WARNING: shift/reduce conflict for SEMICOLON in state 19 resolved as shift
+WARNING: shift/reduce conflict for MULTIPLY in state 21 resolved as shift
+WARNING: shift/reduce conflict for DIVIDE in state 21 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 21 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 21 resolved as shift
+WARNING: shift/reduce conflict for COMPARISON in state 21 resolved as shift
+WARNING: shift/reduce conflict for SEMICOLON in state 21 resolved as shift
+WARNING: shift/reduce conflict for MULTIPLY in state 22 resolved as shift
+WARNING: shift/reduce conflict for DIVIDE in state 22 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 22 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 22 resolved as shift
+WARNING: shift/reduce conflict for COMPARISON in state 22 resolved as shift
+WARNING: shift/reduce conflict for SEMICOLON in state 22 resolved as shift
+WARNING: shift/reduce conflict for MULTIPLY in state 23 resolved as shift
+WARNING: shift/reduce conflict for DIVIDE in state 23 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 23 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 23 resolved as shift
+WARNING: shift/reduce conflict for COMPARISON in state 23 resolved as shift
+WARNING: shift/reduce conflict for SEMICOLON in state 23 resolved as shift
+WARNING: shift/reduce conflict for MULTIPLY in state 25 resolved as shift
+WARNING: shift/reduce conflict for DIVIDE in state 25 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 25 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 25 resolved as shift
+WARNING: shift/reduce conflict for COMPARISON in state 25 resolved as shift
+WARNING: shift/reduce conflict for SEMICOLON in state 25 resolved as shift
+WARNING: shift/reduce conflict for MULTIPLY in state 27 resolved as shift
+WARNING: shift/reduce conflict for DIVIDE in state 27 resolved as shift
+WARNING: shift/reduce conflict for PLUS in state 27 resolved as shift
+WARNING: shift/reduce conflict for MINUS in state 27 resolved as shift
+WARNING: shift/reduce conflict for COMPARISON in state 27 resolved as shift
+WARNING: shift/reduce conflict for SEMICOLON in state 27 resolved as shift
