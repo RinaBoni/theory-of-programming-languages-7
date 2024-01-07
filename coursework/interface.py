@@ -3,25 +3,25 @@ import analizator as analiz
 # from SyntaxAnalyzer import SyntaxAnalyzer
 from pynput import keyboard
 
-# def convert():
-#     output_str_lex.replace('1.0', tk.END, "")
-#     output_s = Lexer.output(input_str.get('1.0', tk.END))
-#     errors=[]
+""" def convert():
+    output_str_lex.replace('1.0', tk.END, "")
+    output_s = Lexer.output(input_str.get('1.0', tk.END))
+    errors=[]
 
-#     for item in output_s:
-#         output_str_lex.insert(tk.END, str(item) + '\n'+ '\n')
+    for item in output_s:
+        output_str_lex.insert(tk.END, str(item) + '\n'+ '\n')
 
-#         result = SyntaxAnalyzer.statement(item)
-#         index = [it['index'] for it in item]
-#         value = [it['token_value'] for it in item]
-#         if result != SyntaxAnalyzer.errors['OK']:
-#             err = {'index': index, 'value': value, 'error type': result}
-#             errors.append(err)
+        result = SyntaxAnalyzer.statement(item)
+        index = [it['index'] for it in item]
+        value = [it['token_value'] for it in item]
+        if result != SyntaxAnalyzer.errors['OK']:
+            err = {'index': index, 'value': value, 'error type': result}
+            errors.append(err)
 
-#         output_str_syn.insert(tk.END, str(err) + '\n'+ '\n')
+        output_str_syn.insert(tk.END, str(err) + '\n'+ '\n')
 
-# def on_press(key):
-#     convert()
+def on_press(key):
+    convert() """
 
 
 def convert():
@@ -35,15 +35,7 @@ def convert():
         output_str_lex.insert(tk.END, str(item) + '\n'+ '\n')
 
     output_str_syn.insert(tk.END, str(syn_result) + '\n'+ '\n')
-    # for item in syn_result:
 
-
-            
-
-
-    
-    
-    
 
 
 win = tk.Tk()   #создаем окно

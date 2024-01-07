@@ -1,6 +1,26 @@
 import re
 from ply import lex, yacc
 
+# зарезервированые слова 
+reserved = {
+    'for':'FOR',
+    'if':'IF',
+    'else if':'ELSE_IF',
+    'else':'ELSE',
+    'switch':'SWITCH',
+    'case':'CASE',
+    'default':'DEFAULT',
+    'while':'WHILE',
+    'do while':'DO_WHILE',
+    'break':'BREAK',
+    'continue':'CONTINUE',
+    'return':'RETURN',
+    'void':'VOID',
+    'try':'TRY',
+    'catch':'CATCH',
+    'throw':'THROW',
+}
+
 # Определение токенов
 tokens = [
     'IDENTIFIER',
@@ -16,10 +36,11 @@ tokens = [
     'CHAR_CONSTANT',
     'SEMICOLON',
     'COMPARISON',
-    'KWORD'
-    # 'FOR',
-    # 'DO'
-]
+    'KWORD',
+    'LSQUAREBRACKET',
+    'RSQUAREBRACKET', 
+    'COMMENT' 
+] + list(reserved.values())
 
 # Регулярные выражения для токенов
 t_MULTIPLY = r'\*'
@@ -32,8 +53,15 @@ t_RPAREN = r'\)'
 t_CHAR_CONSTANT = r"'.'"
 t_SEMICOLON = r';'
 t_COMPARISON = r'==|<=|>=|>|<'
-# t_DO = r'do'
-# t_FOR = r'for'
+t_LSQUAREBRACKET = r'\['
+t_RSQUAREBRACKET = r'\]'
+
+
+def t_COMMENT(t):
+    r'\//.*'
+    # pass
+    return t
+    # No return value. Token discarded
 
 def t_KWORD(t):
     r'for|do'
@@ -42,6 +70,7 @@ def t_KWORD(t):
 # Функция для идентификации идентификаторов
 def t_IDENTIFIER(t):
     r'\b(?:[a-zA-Z]\w*)\b'
+    t.type=reserved.get(t.value, 'IDENTIFIER') #проверка зарезервированого слова
     return t
 # Функция для идентификации дробных чисел
 def t_FLOAT(t):
@@ -95,10 +124,10 @@ def p_expression_integer(p):
 
 def p_expression_binary_operation(p):
     '''expression : expression MULTIPLY expression
-                  | expression DIVIDE  expression
-                  | expression PLUS expression
-                  | expression PLUS PLUS
-                  | expression MINUS expression'''
+                    | expression DIVIDE  expression
+                    | expression PLUS expression
+                    | expression PLUS PLUS
+                    | expression MINUS expression'''
 
     # '''expression : expression PLUS expression
     #               | expression MINUS expression

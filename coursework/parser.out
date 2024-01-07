@@ -1,5 +1,27 @@
 Created by PLY version 3.11 (http://www.dabeaz.com/ply)
 
+Unused terminals:
+
+    BREAK
+    CASE
+    CATCH
+    COMMENT
+    CONTINUE
+    DEFAULT
+    DO_WHILE
+    ELSE
+    ELSE_IF
+    FOR
+    IF
+    LSQUAREBRACKET
+    RETURN
+    RSQUAREBRACKET
+    SWITCH
+    THROW
+    TRY
+    VOID
+    WHILE
+
 Grammar
 
 Rule 0     S' -> expression
@@ -21,19 +43,38 @@ Rule 14    expression -> expression SEMICOLON expression
 Terminals, with rules where they appear
 
 ASSIGN               : 11
+BREAK                : 
+CASE                 : 
+CATCH                : 
 CHAR_CONSTANT        : 13
+COMMENT              : 
 COMPARISON           : 10
+CONTINUE             : 
+DEFAULT              : 
 DIVIDE               : 6
+DO_WHILE             : 
+ELSE                 : 
+ELSE_IF              : 
 FLOAT                : 3
+FOR                  : 
 IDENTIFIER           : 2 11
+IF                   : 
 INTEGER              : 4
 KWORD                : 1 1
 LPAREN               : 12
+LSQUAREBRACKET       : 
 MINUS                : 9
 MULTIPLY             : 5
 PLUS                 : 7 8 8
+RETURN               : 
 RPAREN               : 12
+RSQUAREBRACKET       : 
 SEMICOLON            : 14
+SWITCH               : 
+THROW                : 
+TRY                  : 
+VOID                 : 
+WHILE                : 
 error                : 
 
 Nonterminals, with rules where they appear
